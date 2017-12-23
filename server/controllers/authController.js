@@ -1,3 +1,5 @@
+const passportSetup = require('../../config/passport-setup')
+const passport = require('passport')
 const authController = {}
 
 authController.login = (req,res) => {
@@ -9,9 +11,9 @@ authController.logout = (req,res) => {
 	res.send('Logging out...')
 }
 
-authController.googleAuth = (req,res) => {
-	// TODO: handle with Passport
-	res.send("Logging in with Google...")
+authController.googleRedirect = (req,res,) => {
+	passport.authenticate('google')
+	res.send('You reached the redirect zone')
 }
 
 module.exports = authController
