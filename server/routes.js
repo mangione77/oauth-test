@@ -21,7 +21,7 @@ routes.get("/auth/google", passport.authenticate('google', {
 	scope:['profile']
 }))
 	// - Redirect once is connected to Google
-routes.get("/auth/google/redirect", authController.googleRedirect)	
+routes.get("/auth/google/redirect", passport.authenticate('google'), authController.googleRedirect)	
 
 
 module.exports = routes

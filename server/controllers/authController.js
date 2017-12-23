@@ -12,7 +12,6 @@ authController.logout = (req,res) => {
 }
 
 authController.googleRedirect = (req,res,) => {
-	passport.authenticate('google')
 	res.send('You reached the redirect zone')
 }
 
