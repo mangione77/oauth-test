@@ -9,14 +9,23 @@ passport.use(
 		clientID:process.env.GOOGLE_CLIENT_ID,
 		clientSecret:process.env.GOOGLE_CLIENT_SECRET
 	}, (accessToken, refreshToken, profile, done) => {
-		new User({
-			username:profile.displayName,
-			googleID:profile.id
-		}).save()
-			.then(newUser => {
-				console.log('New user created...', newUser)
+		// Passport callback - check if user already exists in the DB
+		User.findOne({'googleID':profile.id})
+			.then(currentUser => {
+				if (currentUser) {
+					// User exists? Then:
+					console.log('User exists already...', currentUser)
+				}
+				else {
+					// User doesn't exist? Then:
+					new User({username:profile.displayName, googleID:profile.id})
+						.save()
+							.then(newUser => {
+								console.log('New user created...', newUser)
+							})
+							.catch(console.error)
+				}
 			})
-			.catch(console.error)
 	})
 )
 
