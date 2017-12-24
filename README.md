@@ -45,6 +45,6 @@ node server/index
     "passport-google-oauth20": "^1.0.0",
     "path": "^0.12.7"
     
- ### Acknowledgment
+ ### Acknowledgments
  Thanks to [The Net Nija](https://www.thenetninja.co.uk/) for the great tutorials. 
  You can watch a video series on doing an app like the one on this repo [here](https://www.youtube.com/watch?v=sakQbeRjgwg).
