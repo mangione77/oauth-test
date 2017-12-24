@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <html>
-<head>
-	<title>Login</title>
-</head>
-<body>
+	<head>
+		<title>OAuth Exercise</title>
+	</head>
+	<body>
 	<nav>
 		<ul>
 			<% if (user) { %>
@@ -15,11 +14,12 @@
 			<li><a href="/">Homepage</a></li>
 		</ul>
 	</nav>
-	<header>
-		<h1>Login using...</h1>
-	</header>
-	<main>
-		<a href="/auth/google">Google+</a>
-	</main>
-</body>
+		<header>
+			<h1>Hello, <%= user.username %></h1>
+			<img src="<%= user.imageURL%>" />
+		</header>
+		<main>
+			<p>Extra info about you</p>
+		</main>
+	</body>
 </html>

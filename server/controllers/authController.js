@@ -3,12 +3,13 @@ const passport = require('passport')
 const authController = {}
 
 authController.login = (req,res) => {
-	res.render('login')
+	res.render('login', { user: req.user })
 }
 
 authController.logout = (req,res) => {
 	// TODO: handle with Passport
-	res.send('Logging out...')
+	req.logout()
+	res.redirect("/")
 }
 
 authController.googleRedirect = (req,res,) => {
