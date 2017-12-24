@@ -46,5 +46,5 @@ node server/index
     "path": "^0.12.7"
     
  ### Acknowledgments
- Thanks to [The Net Nija](https://www.thenetninja.co.uk/) for the great tutorials. 
+ Thanks to [The Net Ninja](https://www.thenetninja.co.uk/) for the great tutorials. 
  You can watch a video series on doing an app like the one on this repo [here](https://www.youtube.com/watch?v=sakQbeRjgwg).
